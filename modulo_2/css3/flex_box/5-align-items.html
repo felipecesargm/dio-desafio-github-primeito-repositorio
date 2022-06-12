@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - align-items</title>
+    <!-- trata do alinhamento dos flex itens de acordo com o eixo do container
+    o alinhamento é diferente para linhas e colunas
+    permite o alinhamento central no eixo do vertical. -->
+    <!-- center
+    stretch PADRÃO
+    flex-start
+    flex-end
+    baseline: alinhamento de acordo com a linha base da tipografia dos itens -->
+    <style>
+        .container{
+            max-width: 350px;
+            border: 1px solid black;
+            display: flex;
+        }
+
+        .item{
+            background-color: blueviolet;
+            margin: 5px;
+            color: white;
+            text-align: center;
+            flex: 1;
+        }        
+
+        .center{
+            align-items: center;
+        }
+
+        .stretch{
+            align-items: stretch;
+        }
+
+        .flex-start{
+            align-items: flex-start;
+        }
+
+        .flex-end{
+            align-items: flex-end;
+        }
+
+        .baseline{
+            align-items: baseline;
+        }
+
+        .column{
+            flex-direction: column;
+        }
+
+        .central{
+            height: 400px;
+            justify-content: center;            
+
+        }
+
+        .central .item{
+            flex: 0; /*removerá algumas propriedades relacionadas a flex items (grow, basis, shrink) para que os elementos não crescam */
+            padding: 20px;            
+        }
+    </style>
+</head>
+<body>
+    <h1>row/linha</h1>
+    <h2>center</h2>
+    <section class="container center">
+        <div class="item">Item 1 aleatório</div>
+        <div class="item">o alinhamento é diferente para linhas e colunas</div>
+        <!-- cresce de acordo com o eixo central -->
+        <div class="item">Item 3</div>
+    </section>
+    <h2>stretch</h2>
+    <section class="container stretch">
+        <div class="item">Item 1</div>
+        <div class="item">o alinhamento é diferente para linhas e colunas</div>
+        <div class="item">Item 3</div>
+        <!-- cresce de acordo com o maior item do container -->
+    </section>
+
+    <h2>flex-star</h2>
+    <section class="container flex-start">
+        <div class="item">Item 1</div>
+        <div class="item">o alinhamento é diferente para linhas e colunas</div>
+        <div class="item">Item 3</div>        
+    </section>
+
+    <h2>flex-end</h2>
+    <section class="container flex-end">
+        <div class="item">Item 1</div>
+        <div class="item">o alinhamento é diferente para linhas e colunas</div>
+        <div class="item">Item 3</div>        
+    </section>
+
+    <h2>baseline</h2>
+    <section class="container baseline">
+        <div class="item">O item 3 é minha linha base</div>
+        <div class="item">Ou seja, cresce a partir da linha 3</div>
+        <div class="item">Item 3</div>        
+    </section>
+
+    <h1>column</h1>
+    <h2>flex-star</h2>
+    <section class="container flex-start column">
+        <div class="item">Item 1</div>
+        <div class="item">o alinhamento é diferente para linhas e colunas</div>
+        <div class="item">Item 3</div>        
+    </section>
+
+    <h2>flex-end</h2>
+    <section class="container flex-end column">
+        <div class="item">Item 1</div>
+        <div class="item">o alinhamento é diferente para linhas e colunas</div>
+        <div class="item">Item 3</div>        
+    </section>
+
+    <h2>center</h2>
+    <section class="container center column">
+        <div class="item">Item 1 aleatório</div>
+        <div class="item">o alinhamento é diferente para linhas e colunas</div>        
+        <div class="item">Item 3</div>
+    </section>
+
+    <h2>baseline</h2>
+    <section class="container baseline column">
+        <div class="item">O item 3 é minha linha base</div>
+        <div class="item">Ou seja, cresce a partir da linha 3</div>
+        <div class="item">Item 3</div>        
+    </section>
+
+    <h2>alinhamento central à tela</h2>
+    <section class="container central center">
+        <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam veniam non libero </div>
+    </section>
+
+</body>
+</html>

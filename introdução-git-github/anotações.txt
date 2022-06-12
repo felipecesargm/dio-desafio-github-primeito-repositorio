@@ -1,0 +1,7 @@
+git 	status		verifica status
+git 	innit
+git	add *		adiciona para a area staged
+git	commit -m	comentário do commit
+ls -a			lista pastas
+cd /			começo
+	
