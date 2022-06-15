@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fumdamentos - flex-shrink</title>
+    <!-- essa propriedade diz respeito a capacidade de redução de um item num container. Por padrão o item recebe e a capacidade de redução 1... um item com capacidade de redução 0 faz que o mesmo seja capaz de reduzir e por consequência, acaba ocupando a largura que foi definida para o item. -->
+    <style>
+        .flex-container{
+        display: flex;
+        border: 1px solid black;
+        max-width: 600px;
+        }
+        .item{
+            background-color: orangered;
+            font-size: 24px;
+            text-align: center;
+            margin: 5px;
+            width: 100px;
+        }
+        .reduzir0{
+            flex-shrink: 0;
+        }
+        .reduzir1{
+            flex-shrink: 1;
+        }
+        .reduzir2{
+            flex-shrink: 2;
+        }
+        .reduzir1{
+            flex-shrink: 3;
+        }
+        
+    
+        
+    </style>
+</head>
+
+<body>
+    <h1>flex-shrink misto</h1>
+    <div class="flex-container">
+        <div class="item reduzir0">F0</div>
+        <div class="item reduzir0">F0</div>
+        <div class="item reduzir1">F1</div>
+        <div class="item reduzir1">F1</div>
+        <div class="item reduzir2">F2</div>
+        <div class="item reduzir2">F2</div>
+        <div class="item reduzir3">F3</div>
+        <div class="item reduzir3">F3</div>
+    </div>
+</body>
+    <p>uma vez que não for mais possível reduzir, o conteúdo vaza</p>
+    <p>essa propriedade tenta respeitar a hierarquia, mas quando não é possível, o item fica com o tamanho minímo.</p>
+    <div class="flex-container">
+        <div class="item reduzir0">F0</div>
+        <div class="item reduzir0">F0</div>
+        <div class="item reduzir0">F0</div>
+        <div class="item reduzir0">F0</div>
+        <div class="item reduzir0">F0</div>
+        <div class="item reduzir1">F1</div>
+        <div class="item reduzir1">F1</div>
+        <div class="item reduzir2">F2</div>
+        <div class="item reduzir2">F2</div>
+        <div class="item reduzir3">F3</div>
+        <div class="item reduzir3">F3</div>
+    </div>
+</body>
+</html>
